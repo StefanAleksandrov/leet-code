@@ -9,8 +9,7 @@ var maxArea = function(height) {
     for (let i = 0; i < limit; i++) {
         if (height[i] * (limit - i) <= maxArea) continue;
         for (let j = i + 1; j < limit; j++) {
-            currentArea = Math.min(height[i], height[j]) * (j - i);
-            maxArea = Math.max(maxArea, currentArea);
+            maxArea = Math.max(maxArea, Math.min(height[i], height[j]) * (j - i));
         }
     }
     
